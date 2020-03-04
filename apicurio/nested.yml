@@ -1,0 +1,758 @@
+---
+openapi: 3.0.2
+info:
+  title: Nested
+  version: 1.0.0
+  description: Learning to use Apicurio
+  contact:
+    name: Jaanus Nurmoja
+    url: https://github.com/jaanusnurmoja
+    email: jaanus.nurmoja@gmail.com
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+servers:
+- url: /v3/kordused
+  description: ""
+paths:
+  /ones:
+    summary: Path used to manage the list of ones.
+    description: The REST endpoint/path used to list and create zero or more `One`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/One'
+          description: Successful response - returns an array of `One` entities.
+      operationId: getOnes
+      summary: List All Ones
+      description: Gets a list of all `One` entities.
+    post:
+      requestBody:
+        description: A new `One` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/One'
+        required: true
+      responses:
+        "201":
+          description: Successful response.
+      operationId: createOne
+      summary: Create a One
+      description: Creates a new instance of a `One`.
+  /ones/{oneId}:
+    summary: Path used to manage a single One.
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `One`.  This path contains `GET`, `PUT`, and `DELETE` operations used
+      to perform the get, update, and delete tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/One'
+          description: Successful response - returns a single `One`.
+      operationId: getOne
+      summary: Get a One
+      description: Gets the details of a single instance of a `One`.
+    put:
+      requestBody:
+        description: Updated `One` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/One'
+        required: true
+      responses:
+        "202":
+          description: Successful response.
+      operationId: updateOne
+      summary: Update a One
+      description: Updates an existing `One`.
+    delete:
+      responses:
+        "204":
+          description: Successful response.
+      operationId: deleteOne
+      summary: Delete a One
+      description: Deletes an existing `One`.
+    parameters:
+    - name: oneId
+      description: A unique identifier for a `One`.
+      schema:
+        type: string
+      in: path
+      required: true
+  /twos:
+    summary: Path used to manage the list of twos.
+    description: The REST endpoint/path used to list and create zero or more `Two`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Two'
+          description: Successful response - returns an array of `Two` entities.
+      operationId: getTwos
+      summary: List All Twos
+      description: Gets a list of all `Two` entities.
+    post:
+      requestBody:
+        description: A new `Two` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Two'
+        required: true
+      responses:
+        "201":
+          description: Successful response.
+      operationId: createTwo
+      summary: Create a Two
+      description: Creates a new instance of a `Two`.
+  /twos/{twoId}:
+    summary: Path used to manage a single Two.
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `Two`.  This path contains `GET`, `PUT`, and `DELETE` operations used
+      to perform the get, update, and delete tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Two'
+          description: Successful response - returns a single `Two`.
+      operationId: getTwo
+      summary: Get a Two
+      description: Gets the details of a single instance of a `Two`.
+    put:
+      requestBody:
+        description: Updated `Two` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Two'
+        required: true
+      responses:
+        "202":
+          description: Successful response.
+      operationId: updateTwo
+      summary: Update a Two
+      description: Updates an existing `Two`.
+    delete:
+      responses:
+        "204":
+          description: Successful response.
+      operationId: deleteTwo
+      summary: Delete a Two
+      description: Deletes an existing `Two`.
+    parameters:
+    - name: twoId
+      description: A unique identifier for a `Two`.
+      schema:
+        type: string
+      in: path
+      required: true
+  /threes:
+    summary: Path used to manage the list of threes.
+    description: The REST endpoint/path used to list and create zero or more `Three`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Three'
+          description: Successful response - returns an array of `Three` entities.
+      operationId: getThrees
+      summary: List All Threes
+      description: Gets a list of all `Three` entities.
+    post:
+      requestBody:
+        description: A new `Three` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Three'
+        required: true
+      responses:
+        "201":
+          description: Successful response.
+      operationId: createThree
+      summary: Create a Three
+      description: Creates a new instance of a `Three`.
+  /threes/{threeId}:
+    summary: Path used to manage a single Three.
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `Three`.  This path contains `GET`, `PUT`, and `DELETE` operations used
+      to perform the get, update, and delete tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Three'
+          description: Successful response - returns a single `Three`.
+      operationId: getThree
+      summary: Get a Three
+      description: Gets the details of a single instance of a `Three`.
+    put:
+      requestBody:
+        description: Updated `Three` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Three'
+        required: true
+      responses:
+        "202":
+          description: Successful response.
+      operationId: updateThree
+      summary: Update a Three
+      description: Updates an existing `Three`.
+    delete:
+      responses:
+        "204":
+          description: Successful response.
+      operationId: deleteThree
+      summary: Delete a Three
+      description: Deletes an existing `Three`.
+    parameters:
+    - name: threeId
+      description: A unique identifier for a `Three`.
+      schema:
+        type: string
+      in: path
+      required: true
+  /fives:
+    summary: Path used to manage the list of fives.
+    description: The REST endpoint/path used to list and create zero or more `Five`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Five'
+          description: Successful response - returns an array of `Five` entities.
+      operationId: getFives
+      summary: List All Fives
+      description: Gets a list of all `Five` entities.
+    post:
+      requestBody:
+        description: A new `Five` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Five'
+        required: true
+      responses:
+        "201":
+          description: Successful response.
+      operationId: createFive
+      summary: Create a Five
+      description: Creates a new instance of a `Five`.
+  /fives/{fiveId}:
+    summary: Path used to manage a single Five.
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `Five`.  This path contains `GET`, `PUT`, and `DELETE` operations used
+      to perform the get, update, and delete tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Five'
+          description: Successful response - returns a single `Five`.
+      operationId: getFive
+      summary: Get a Five
+      description: Gets the details of a single instance of a `Five`.
+    put:
+      requestBody:
+        description: Updated `Five` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Five'
+        required: true
+      responses:
+        "202":
+          description: Successful response.
+      operationId: updateFive
+      summary: Update a Five
+      description: Updates an existing `Five`.
+    delete:
+      responses:
+        "204":
+          description: Successful response.
+      operationId: deleteFive
+      summary: Delete a Five
+      description: Deletes an existing `Five`.
+    parameters:
+    - name: fiveId
+      description: A unique identifier for a `Five`.
+      schema:
+        type: string
+      in: path
+      required: true
+  /fours:
+    summary: Path used to manage the list of fours.
+    description: The REST endpoint/path used to list and create zero or more `Four`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Four'
+          description: Successful response - returns an array of `Four` entities.
+      operationId: getFours
+      summary: List All Fours
+      description: Gets a list of all `Four` entities.
+    post:
+      requestBody:
+        description: A new `Four` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Four'
+        required: true
+      responses:
+        "201":
+          description: Successful response.
+      operationId: createFour
+      summary: Create a Four
+      description: Creates a new instance of a `Four`.
+  /fours/{fourId}:
+    summary: Path used to manage a single Four.
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `Four`.  This path contains `GET`, `PUT`, and `DELETE` operations used
+      to perform the get, update, and delete tasks, respectively.
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Four'
+          description: Successful response - returns a single `Four`.
+      operationId: getFour
+      summary: Get a Four
+      description: Gets the details of a single instance of a `Four`.
+    put:
+      requestBody:
+        description: Updated `Four` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Four'
+        required: true
+      responses:
+        "202":
+          description: Successful response.
+      operationId: updateFour
+      summary: Update a Four
+      description: Updates an existing `Four`.
+    delete:
+      responses:
+        "204":
+          description: Successful response.
+      operationId: deleteFour
+      summary: Delete a Four
+      description: Deletes an existing `Four`.
+    parameters:
+    - name: fourId
+      description: A unique identifier for a `Four`.
+      schema:
+        type: string
+      in: path
+      required: true
+  /ones/{oneId}/_related/twos:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/One'
+            examples:
+              One:
+                value:
+                  id: '{oneId}'
+                  title: some text
+                  created: 2018-02-10T09:30Z
+                  modified: 2018-02-10T09:30Z
+                  _related:
+                    Two:
+                    - id: 0
+                      one_id: '{oneId}'
+                      title: some text
+                      created: 2018-02-10T09:30Z
+                      modified: 2018-02-10T09:30Z
+                      _related:
+                        Three: []
+    parameters:
+    - name: oneId
+      schema:
+        type: integer
+      in: path
+      required: true
+components:
+  schemas:
+    One:
+      title: Root Type for One
+      description: ""
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        created:
+          format: date-time
+          type: string
+        modified:
+          type: string
+        _related:
+          description: ""
+      example:
+        id: "11"
+        title: Title of number one
+        created: 2020-03-02T23:00:00
+        modified: ""
+        _related:
+          Two:
+          - id: 12
+            one_id: 11
+            title: Title of number two
+            created: 2020-03-02T23:00:00
+            modified: ""
+            _related:
+              Three:
+              - id: 13
+                two_id: 12
+                title: Title of number three
+                created: 2020-03-02T23:00:00
+                modified: ""
+                _related:
+                  Four:
+                  - id: 14
+                    three_id: 13
+                    title: Title of number four
+                    created: 2020-03-02T23:00:00
+                    modified: ""
+                    _related:
+                      Five:
+                      - id: 15
+                        four_id: 14
+                        title: Title of number five
+                        created: 2020-03-02T23:00:00
+                        modified: ""
+    Two:
+      title: Root Type for Two
+      description: Second level
+      required:
+      - title
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        one_id:
+          format: int32
+          type: integer
+        title:
+          type: string
+        created:
+          format: date-time
+          type: string
+        modified:
+          format: date-time
+          type: string
+        _related:
+          type: object
+          properties:
+            Three:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    format: int32
+                    type: integer
+                  two_id:
+                    format: int32
+                    type: integer
+                  title:
+                    type: string
+                  created:
+                    format: date-time
+                    type: string
+                  modified:
+                    format: date-time
+                    type: string
+                  _related:
+                    type: object
+                    properties:
+                      Four:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              format: int32
+                              type: integer
+                            three_id:
+                              format: int32
+                              type: integer
+                            title:
+                              type: string
+                            created:
+                              format: date-time
+                              type: string
+                            modified:
+                              format: date-time
+                              type: string
+                            _related:
+                              type: object
+                              properties:
+                                Five:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        format: int32
+                                        type: integer
+                                      four_id:
+                                        format: int32
+                                        type: integer
+                                      title:
+                                        type: string
+                                      created:
+                                        format: date-time
+                                        type: string
+                                      modified:
+                                        format: date-time
+                                        type: string
+      example:
+        id: 12
+        one_id: 11
+        title: Title of number three
+        created: 2020-03-02T23:00:00
+        modified: ""
+        _related:
+          Three:
+          - id: 13
+            two_id: 12
+            title: Title of number two
+            created: 2020-03-02T23:00:00
+            modified: ""
+            _related:
+              Four:
+              - id: 14
+                three_id: 13
+                title: Title of number four
+                created: 2020-03-02T23:00:00
+                modified: ""
+                _related:
+                  Five:
+                  - id: 15
+                    four_id: 14
+                    title: Title of number five
+                    created: 2020-03-02T23:00:00
+                    modified: ""
+    Five:
+      title: Root Type for Five
+      description: ""
+      required:
+      - title
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        four_id:
+          format: int32
+          type: integer
+        title:
+          type: string
+        created:
+          format: date-time
+          type: string
+        modified:
+          format: date-time
+          type: string
+      example:
+        id: 15
+        four_id: 14
+        title: Title of number five
+        created: 2020-03-02T23:00:00
+        modified: ""
+    Three:
+      title: Root Type for Three
+      description: ""
+      required:
+      - title
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        two_id:
+          format: int32
+          type: integer
+        title:
+          type: string
+        created:
+          format: date-time
+          type: string
+        modified:
+          format: date-time
+          type: string
+        _related:
+          type: object
+          properties:
+            Four:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    format: int32
+                    type: integer
+                  three_id:
+                    format: int32
+                    type: integer
+                  title:
+                    type: string
+                  created:
+                    format: date-time
+                    type: string
+                  modified:
+                    format: date-time
+                    type: string
+                  _related:
+                    type: object
+                    properties:
+                      Five:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              format: int32
+                              type: integer
+                            four_id:
+                              format: int32
+                              type: integer
+                            title:
+                              type: string
+                            created:
+                              format: date-time
+                              type: string
+                            modified:
+                              format: date-time
+                              type: string
+      example:
+        id: 13
+        two_id: 12
+        title: Title of number two
+        created: 2020-03-02T23:00:00
+        modified: ""
+        _related:
+          Four:
+          - id: 14
+            three_id: 13
+            title: Title of number four
+            created: 2020-03-02T23:00:00
+            modified: ""
+            _related:
+              Five:
+              - id: 15
+                four_id: 14
+                title: Title of number five
+                created: 2020-03-02T23:00:00
+                modified: ""
+    Four:
+      title: Root Type for Four
+      description: ""
+      required:
+      - title
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        three_id:
+          format: int32
+          type: integer
+        title:
+          type: string
+        created:
+          format: date-time
+          type: string
+        modified:
+          format: date-time
+          type: string
+        _related:
+          type: object
+          properties:
+            Five:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    format: int32
+                    type: integer
+                  four_id:
+                    format: int32
+                    type: integer
+                  title:
+                    type: string
+                  created:
+                    format: date-time
+                    type: string
+                  modified:
+                    type: string
+      example:
+        id: 14
+        three_id: 13
+        title: Title of number four
+        created: 2020-03-02T23:00:00
+        modified: ""
+        _related:
+          Five:
+          - id: 15
+            four_id: 14
+            title: Title of number five
+            created: 2020-03-02T23:00:00
+            modified: ""
